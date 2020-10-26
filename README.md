@@ -23,11 +23,10 @@ ADD/RENAME/MODIFY/DROP column_name DATATYPE;
 4. Insert - Place an entry into the table.
 ```
 INSERT INTO table_name (
-	Column 1, Column 2, …
-)
+	Column 1, Column 2, …)
 VALUES (
-	‘Value 1’, ‘Value 2’, … 
-)’’’
+	‘Value 1’, ‘Value 2’, … )
+’’’
 
 5. Update - Update table 
 ```
