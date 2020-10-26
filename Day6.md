@@ -40,6 +40,8 @@ Relational Databases contain connected data therefore the tables should be relat
   * A third table called a mapping or link table is required in order to implement such a relationship. 
   * For example, customers can purchase many products.
   * Another example, book checking out system. One user can check out many books and one book can be checked out by many users.
+
+![ERD](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/ERD.png)
  
 ### Primary key
 * Unique identifier - identifies each record in the table.
