@@ -26,7 +26,7 @@ INSERT INTO table_name (
 	Column 1, Column 2, …)
 VALUES (
 	‘Value 1’, ‘Value 2’, … )
-’’’
+```
 
 5. Update - Update table 
 ```
