@@ -114,3 +114,40 @@ SQL is an acronym for **Structured Query Language**
 * FLOAT – scientific use (very large numbers).
 * BIT – equivalent to binary (0,1 or NULL).
 
+# Task - Create a film database
+```
+CREATE DATABASE db_group2;
+USE  db_group2;
+CREATE TABLE film_table (
+film_name VARCHAR(10),
+        film_type VARCHAR(6),
+  	date_of_release DATE,
+	director VARCHAR(20),
+	writer VARCHAR(20),
+	star VARCHAR(20),
+	film_language VARCHAR(20),
+	official_website VARCHAR(MAX))
+
+ALTER TABLE db_group2
+ADD plot_summary VARCHAR(MAX)
+
+INSERT INTO film_table (
+film_name, film_type, date_of_release, director, writer, star, film_language, official_website, plot_summary)
+VALUES (
+'Avengers', 'Action', '2012','Joss Whedon', 'Zakk Penn', 'Chris Evans', 'English', 'https://www.marvel.com/movies/the-avengers', 'When an unexpected enemy emerges that threatens global safety and security, Nick Fury, Director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins.')
+
+INSERT INTO film_table (
+film_name, film_type, date_of_release, director, writer, star, film_language, official_website, plot_summary)
+VALUES (
+'Hulk','Action','2003-06-20','Ang Lee','Stan Lee','Eric Bana','English','https://www.marvel.com/characters/hulk-bruce-banner','Bruce Banner, a genetics researcher with a tragic past, suffers an accident that causes him to transform into a raging green monster when he gets angry.')
+
+UPDATE film_table
+SET date_of_release = '2012-05-04'
+        WHERE date_of_release='2012'
+
+--DELETE FROM film_table
+--    WHERE film_name= 'Hulk'
+
+
+SELECT * FROM film_table
+```
