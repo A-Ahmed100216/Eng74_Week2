@@ -23,31 +23,30 @@ SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1 and Di
 -- Counts the number of times the query is satisfied
 SELECT COUNT(*) FROM Customers WHERE Country='France'
 
-
 -- IN- look for collections
 SELECT ContactName, Region From Customers WHERE Region In('WA','SP')
+
 -- Between - ranges
 SELECT * From EmployeeTerritories where TerritoryID between 06800 and 09999
 
--- AS - changes column names
--- Constructing output from two columns 
-Select CompanyName AS 'CompanyName',
+-- AS - changes column names. Constructing output from two columns 
+SELECT CompanyName AS 'CompanyName',
     City +', ' + Country AS 'City' 
-from Customers
+FROM Customers
 
-Select CompanyName AS 'CompanyName',
+SELECT CompanyName AS 'CompanyName',
     City +', ' + Country AS 'City' 
 from Customers Where Region is null
 
 
 -- Wildcards - Allow more matching, it's less restrictive or includes everything
--- % sign, multiple unknown characters 
+-- (1)  % sign, multiple unknown characters 
 Select ProductName from Products Where ProductName Like 'Ch%'
--- _ sign, a single unknown character, each underscore represents a character
+-- (2)  _ sign, a single unknown character, each underscore represents a character
 Select ProductName from Products Where ProductName Like 'Cha__'
 Select ProductName from Products Where ProductName Like '__ai'
--- [charlist], Sets and ranges of characters to match
---[^charlist], Sets a range that does not match range of characters
+-- (3)  [charlist], Sets and ranges of characters to match
+-- (4) [^charlist], Sets a range that does not match range of characters
 ```
 
 # Exercise 1
@@ -65,14 +64,18 @@ SELECT FirstName, LastName FROM Employees WHERE TitleOfCourtesy='Dr.'
 -- 3. How many products are discontinued?
 SELECT COUNT(*) FROM Products WHERE Discontinued = 0
 -- Answer: 69
+
 -- 4. What are the names and product IDs of the prodcts with a unit price below 5.00?
 SELECT ProductName, CategoryID FROM Products WHERE UnitPrice < 5.00
+
 --5. Which categories have a category name with initials beginning with B or S?
 SELECT CategoryName FROM Categories WHERE CategoryName LIKE 'B%' or CategoryName LIKE 'S%' 
 -- Answer: Beverages, Seafood
+
 -- 6. How many orders are there for EmployeeIDs 5 and 7 (The total for both)?
 SELECT COUNT(*) FROM Orders WHERE EmployeeID =5 OR EmployeeID=7
 --Answer: 114
+
 -- 7. Write a SELECT using the Employees table and concatenate First Name and Last Name together. Use a column alias to rename the column to Employee Name.
 Select FirstName +' ' + LastName AS 'Employee Name' FROM Employees
 
