@@ -75,5 +75,6 @@ SELECT * FROM ebook_details
 SELECT * FROM user_details
 ```
 
-![user_details]()
-![ebook_details]()
+![user_details](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/user_details.png)
+![ebook_details](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/ebook_details.png)
+
