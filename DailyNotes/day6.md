@@ -151,3 +151,34 @@ SET date_of_release = '2012-05-04'
 SELECT * FROM film_table
 ```
 
+## Normal form
+* Don’t want to duplicate data.
+* Rules or best practices for designing databases.
+* 3 main types:
+1. First Normal Form 
+  * Make everything atomic- data must be presented as small as it can be- first and last, don’t need full
+  * No repeating groups i.e. author 1, author 2, etc.
+2. 2nd Normal Form (2NF)
+  * Satisfies 1NF
+  * All non-key attributes are fully functional dependent and the primary key. 
+3. 3rd Normal Form (3NF)
+  * Satisfies in 2NF
+  * There is NO Transitive Functional Dependency:
+    * A Transitive Functional Dependency is when a non-key column is functionally dependent on another non-key column, which is functionally dependent on the primary key. 
+
+## Why?
+1. Testing Purposes 
+  * Getting data for testing.
+  * Saving data, generated during testing activity. 
+  * Data verifications in databases
+    * Find data;
+    * To ensure data integrity; 
+    * To manipulate test data for specific tests.
+  * Testing Databases
+2. Project Manager / Business Analyst 
+  * Systems use databases in development.
+  * To analyse data, you need to be able to retrieve it.
+  * You can build small databases to support prototyping, analysis, data management and reporting
+  * Helps during test phase.
+  * Helps understand data flow, warehouses and analytic products. 
+

@@ -10,7 +10,7 @@ SELECT <column_name> FROM <databse>
 * The * can be used to select every column i.e. show the entire database.
 * WHERE can be used to better define our queries. 
 
-![SElect]()
+![Select](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/Select.png)
 
 ## Examples
 ```sql
