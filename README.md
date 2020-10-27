@@ -4,7 +4,7 @@
 
 ``` CREATE DATABASE <name>```
 
-```
+```sql
 CREATE TABLE <table_name>(
 Column_1 DATATYPE,
 Column_2 DATATYPE,
@@ -15,13 +15,13 @@ Column_3 DATATYPE)
 ```DROP TABLE <table_name>```
 
 3. Alter - Ammend an entry. Alter is used in conjunction with Add, Rename, Modify or Drop. 
-```
+```sql
 ALTER TABLE <table_name>
 ADD/RENAME/MODIFY/DROP column_name DATATYPE;
 ```
 
 4. Insert - Place an entry into the table.
-```
+```sql
 INSERT INTO table_name (
 	Column 1, Column 2, …)
 VALUES (
@@ -29,7 +29,7 @@ VALUES (
 ```
 
 5. Update - Update table 
-```
+```sql
 UPDATE <table_name>
 	SET column_name = ‘new value’
 WHERE entry you want to change = 'value'

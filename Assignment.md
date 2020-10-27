@@ -8,7 +8,7 @@
 ``` sql
 
 CREATE DATABASE assessment_aminah;
-use assessment_aminah;
+USE assessment_aminah;
 CREATE TABLE user_details (
     username VARCHAR(20),
     email VARCHAR(MAX),
@@ -75,3 +75,5 @@ SELECT * FROM ebook_details
 SELECT * FROM user_details
 ```
 
+![user_details]()
+![ebook_details]()
