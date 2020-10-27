@@ -1,7 +1,7 @@
 # Task - Create a database for a book store
 
 ## ERD 
-![ERD](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/ERD.png)
+![ERD](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/ERD2.png)
 
 ## Code
 
