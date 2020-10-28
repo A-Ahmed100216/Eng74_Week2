@@ -119,13 +119,17 @@ WHERE CHARINDEX('''',ProductName)!=0
 ```
 
 ## Date functions
-* GETDATE() - returns the date.
-```sql SELECT GETDATE()```
-* SYSDATETIME() - returns the date and time of the computer being used
-```sql SELECT SYSDATETIME()```
+* GETDATE() - returns the date.   
+```sql 
+SELECT GETDATE()``` 
+* SYSDATETIME() - returns the date and time of the computer being used.     
+```sql 
+SELECT SYSDATETIME()```   
 * DATEADD – Adds the specified amount of time to a column in the DATE format.
-  * d=Days, mm=Months, yyyy= Years
-```sql DATEADD (<type>, <amount>, <column_name>); 
+  * d=Days, mm=Months, yyyy= Years   
+
+```sql
+DATEADD (<type>, <amount>, <column_name>); 
 
 --Example – Adds 5 days onto the OrderDate and stores this in a new column titled Due Date. 
 DATEADD(d,5,OrderDate) AS 'Due Date’
@@ -157,20 +161,20 @@ SELECT DAY(<column_name>);
 
 --Example – Extracts day from OrderDate.
 SELECT DAY(OrderDate) AS 'Order Day'
-
+```  
 ### Further Examples and Exercises
 ```sql
--- Extracts the month from the OrderDate column in the Orders table. 
+--Extracts the month from the OrderDate column in the Orders table. 
 SELECT Month(OrderDate) AS 'Order Month' from Orders
 
--- Adds 5 days onto the shipping data and classifies this as the Due Date.
--- The difference between the order date and shipping date is stored in Ship Days.
--- Sorts by ‘Ship Days’ column. 
+--Adds 5 days onto the shipping data and classifies this as the Due Date.
+--The difference between the order date and shipping date is stored in Ship Days.
+--Sorts by ‘Ship Days’ column. 
 SELECT OrderDate, ShippedDate,DATEADD(d,5,OrderDate) AS 'Due Date',
     DATEDIFF(d,OrderDate,ShippedDate) AS 'Ship Days'
 FROM Orders ORDER BY 'Ship Days' DESC
 
--- Gives the full name and age of employees.
+--Gives the full name and age of employees.
 SELECT 
     FirstName + ' ' + LastName AS 'Full Name',
     BirthDate,
@@ -223,6 +227,7 @@ SELECT <grouping_column>,
 FROM table_name
 GROUP BY <grouping_column>
 HAVING AVG(<column>) > value
+
 --Example – Groups by Supplier ID and only shows order which have more than 5 units on order. 
 SELECT SupplierID, 
     SUM(UnitsOnOrder) AS 'Total on Order',
@@ -250,7 +255,7 @@ SELECT SupplierID,
 FROM Products
 GROUP BY SupplierID
 HAVING AVG(UnitsOnOrder)>5
-
+```   
 # Joins 
 * Join is a keyword used to combine matched rows from two or more tables.
 * It allows you to create a list of combined rows of matching data from different tables. 
