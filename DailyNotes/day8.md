@@ -259,7 +259,7 @@ HAVING AVG(UnitsOnOrder)>5
 # Joins 
 * Join is a keyword used to combine matched rows from two or more tables.
 * It allows you to create a list of combined rows of matching data from different tables. 
-*Various types of joins.   
+* Various types of joins.   
 ![joins](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/joins.png)    
 * When aliasing tables you don’t need AS
 ```sql
