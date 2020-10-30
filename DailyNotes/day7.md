@@ -51,7 +51,7 @@ FROM Customers WHERE Region IS NULL;
   * = Equal To
   * != Not Equal To
   * \> Greater Than 
-  * \> =Greater Than or Equal To
+  * \>= Greater Than or Equal To
   * < Less Than 
   * <= Less Than or Equal To
 
