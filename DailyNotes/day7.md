@@ -20,7 +20,7 @@ SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1;
 SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1 and Discontinued=1;
 ```
 
-* **COUNT*** -  Counts the number of times the query is satisfied
+* **COUNT** -  Counts the number of times the query is satisfied
 ```sql
 SELECT COUNT(*) FROM Customers WHERE Country='France'  
 ```
@@ -50,16 +50,17 @@ FROM Customers WHERE Region IS NULL;
 * **Arithmetic Operators** - Can be used in conjunction with WHERE. 
   * = Equal To
   * != Not Equal To
-  * > Greater Than 
-  * >= Greater Than or Equal To
+  * >Greater Than 
+  * >=Greater Than or Equal To
   * < Less Than 
   * <= Less Than or Equal To
 
 
-*  **Wildcards** - Allow more matching, it's less restrictive or includes everything
+*  **Wildcards** - Allow more matching, it's less restrictive or includes everything.    
   (1)  % sign, multiple unknown characters
 ```sql
-Select ProductName from Products Where ProductName Like 'Ch%' ```
+Select ProductName from Products Where ProductName Like 'Ch%'
+```
   (2)  _ sign, a single unknown character, each underscore represents a character
 ```sql
 Select ProductName from Products Where ProductName Like 'Cha__'

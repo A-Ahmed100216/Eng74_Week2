@@ -97,13 +97,14 @@ WHERE CHARINDEX('''',ProductName)!=0
 ## Date functions
 * **GETDATE()** - returns the date.   
 ```sql 
-SELECT GETDATE()``` 
+SELECT GETDATE()
+``` 
 * **SYSDATETIME()** - returns the date and time of the computer being used.     
 ```sql 
-SELECT SYSDATETIME()```   
+SELECT SYSDATETIME()
+```   
 * **DATEADD** – Adds the specified amount of time to a column in the DATE format.
   * d=Days, mm=Months, yyyy= Years   
-
 ```sql
 DATEADD (<type>, <amount>, <column_name>); 
 
@@ -117,21 +118,21 @@ DATEDIFF(<type>, <column1>, <column2>);
 --Example – Calculates the difference between two dates and stores in a new column titled Ship Time. 
 DATEDIFF(d,OrderDate,ShippedDate) AS 'Ship Time'
 ```
-* YEAR** – Extracts the year from a date
+* **YEAR** – Extracts the year from a date.
 ```sql
 SELECT YEAR(<column_name>);
 
 --Example – Extracts year from OrderDate.
 SELECT YEAR(OrderDate) AS 'Order Year'
 ```
-* **MONTH** – Extracts the month from a date
+* **MONTH** – Extracts the month from a date.
 ```sql
 SELECT MONTH(<column_name>);
 
 --Example – Extracts month from OrderDate.
 SELECT MONTH(OrderDate) AS 'Order Month'
 ```
-* **DAY** – Extracts the day from a date
+* **DAY** – Extracts the day from a date.
 ```sql
 SELECT DAY(<column_name>);
 
