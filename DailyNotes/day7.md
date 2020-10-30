@@ -50,8 +50,8 @@ FROM Customers WHERE Region IS NULL;
 * **Arithmetic Operators** - Can be used in conjunction with WHERE. 
   * = Equal To
   * != Not Equal To
-  * >Greater Than 
-  * >=Greater Than or Equal To
+  * \> Greater Than 
+  * \> =Greater Than or Equal To
   * < Less Than 
   * <= Less Than or Equal To
 
