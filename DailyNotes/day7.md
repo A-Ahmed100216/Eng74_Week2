@@ -57,7 +57,7 @@ FROM Customers WHERE Region IS NULL;
 
 
 *  **Wildcards** - Allow more matching, it's less restrictive or includes everything.    
-  (1)  % sign, multiple unknown characters
+(1) % sign, multiple unknown characters
 ```sql
 Select ProductName from Products Where ProductName Like 'Ch%'
 ```
