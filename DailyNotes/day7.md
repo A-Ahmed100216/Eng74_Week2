@@ -8,46 +8,73 @@
 SELECT <column_name> FROM <databse>
 ```   
 * The * can be used to select every column i.e. show the entire database.
-* WHERE can be used to better define our queries. 
+* **WHERE** - used to better define our queries. 
 
 ![Select](https://github.com/A-Ahmed100216/Eng74_Week2/blob/main/Images/Select.png)
 
-## Examples
 ```sql
-USE Northwind
+USE Northwind -- Directs to the correct database
 
-Select CustomerID, city FROM Customers WHERE Country='France'
-SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1
-SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1 and Discontinued = 0
+Select CustomerID, city FROM Customers WHERE Country='France';
+SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1;
+SELECT ProductName,UnitPrice, CategoryID FROM Products WHERE CategoryID=1 and Discontinued=1;
+```
 
--- Counts the number of times the query is satisfied
-SELECT COUNT(*) FROM Customers WHERE Country='France'
+* **COUNT*** -  Counts the number of times the query is satisfied
+```sql
+SELECT COUNT(*) FROM Customers WHERE Country='France'  
+```
 
--- IN- look for collections
-SELECT ContactName, Region From Customers WHERE Region In('WA','SP')
+* **Range** – Uses the BETWEEN keyword
+```sql
+SELECT <column_name> FROM <table_name> WHERE <column_name> BETWEEN <value1> AND <value2>;
 
--- Between - ranges
-SELECT * From EmployeeTerritories where TerritoryID between 06800 and 09999
+---Example
+SELECT * from EmployeeTerritories where TerritoryID BETWEEN 06800 and 09999;
+```
 
--- AS - changes column names. Constructing output from two columns 
+* **Alias** – Renames a column or makes a new column. Uses the AS keyword.
+```sql
+SELECT <column_name > AS <'new_name'> FROM <table_name>
+
+--Examples
 SELECT CompanyName AS 'CompanyName',
-    City +', ' + Country AS 'City' 
-FROM Customers
+    City +', ' + Country AS 'City'
+FROM Customers;
 
 SELECT CompanyName AS 'CompanyName',
-    City +', ' + Country AS 'City' 
-from Customers Where Region is null
+    City +', ' + Country AS 'City'
+FROM Customers WHERE Region IS NULL;
+```
+
+* **Arithmetic Operators** - Can be used in conjunction with WHERE. 
+  * = Equal To
+  * != Not Equal To
+  * > Greater Than 
+  * >= Greater Than or Equal To
+  * < Less Than 
+  * <= Less Than or Equal To
 
 
--- Wildcards - Allow more matching, it's less restrictive or includes everything
--- (1)  % sign, multiple unknown characters 
-Select ProductName from Products Where ProductName Like 'Ch%'
--- (2)  _ sign, a single unknown character, each underscore represents a character
+*  **Wildcards** - Allow more matching, it's less restrictive or includes everything
+  (1)  % sign, multiple unknown characters
+```sql
+Select ProductName from Products Where ProductName Like 'Ch%' ```
+  (2)  _ sign, a single unknown character, each underscore represents a character
+```sql
 Select ProductName from Products Where ProductName Like 'Cha__'
 Select ProductName from Products Where ProductName Like '__ai'
--- (3)  [charlist], Sets and ranges of characters to match
--- (4) [^charlist], Sets a range that does not match range of characters
 ```
+  (3) CHARLIST – Sets and ranges to match characters. Returns all results that sart with the specified characters. In the example, products beginning with B or S shall be returned. 
+```sql
+SELECT * From <table_name> where <column_name> LIKE '[ABC]%'
+
+--Example
+SELECT * From Products where ProductName LIKE '[BS]%'
+```
+  (4) ^CHARLIST - Opposite of CHARLIST,sets a range that does not match range of characters. This will return results that do not start with the specified characters.
+
+
 
 # Exercise 1
 ```sql

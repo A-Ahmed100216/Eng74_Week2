@@ -4,33 +4,8 @@
 * *Joins*
 
 # SQL Queries Continued
-* Range – Uses the BETWEEN keyword
-```sql
-SELECT <column_name> FROM <table_name> WHERE <column_name> BETWEEN <value1> AND <value2>;
 
----Example 
-SELECT * from EmployeeTerritories where TerritoryID BETWEEN 06800 and 09999
-```  
-* CHARLIST – Returns instances of specified values. In the example, products beginning with the letter B or S are returned. 
-```sql
-SELECT * From <table_name> where <column_name> LIKE '[ABC]%'
-
---Example
-SELECT * From Products where ProductName LIKE '[BS]%'
-```   
-* Alias – Renames a column or makes a new column for example, can be used to create a full name column from a last name and full name column. 
-```sql
-SELECT <column_name > AS <'new_name'> FROM <table_name>
-
--- Example 1
-SELECT CompanyName AS 'Company Name',
-    City + ', '+ Country AS 'City and Country'
-FROM Customers WHERE City='London'
-
--- Example 2
-SELECT EmployeeID, FirstName, FirstName + ' ' + LastName AS 'Employee Name' FROM Employees
-```   
-* IN – Can be used if you have multiple queries and do not want to keep using or.
+* **IN** – Looks for collections. Can be used if you have multiple queries and do not want to keep using OR.
 ```sql
 SELECT COUNT(*) FROM <table_name> WHERE <column_name> IN ('value1','value2','value3')
 
@@ -39,7 +14,7 @@ SELECT COUNT(*) FROM <table_name> WHERE <column_name> IN ('value1','value2','val
 SELECT COUNT(*) FROM Orders WHERE ShipCity='Lyon' or ShipCity='Reims' or ShipCity='Graz'
 SELECT COUNT(*) FROM Orders WHERE ShipCity IN ('Lyon','Reims','Graz')
 ```   
-* TOP - Identifies specified number or percent of values from the top of the table
+* **TOP** - Identifies specified number or percent of values from the top of the table
 ```sql
 SELECT TOP num column_name FROM table_name
 
@@ -47,7 +22,7 @@ SELECT TOP num column_name FROM table_name
 SELECT TOP 5 * FROM Employees
 SELECT TOP 75 PERCENT * FROM Employees
 ```   
-* ORDER BY - Sort a table based on a column. **ASC**ending or **DESC**ending
+* **ORDER BY** - Sort a table based on a column. **ASC**ending or **DESC**ending
 ```sql
 SELECT column_name, column_name, FROM table_name ORDER BY column_you_want_to_order DESC/ASC
 
@@ -55,7 +30,7 @@ SELECT column_name, column_name, FROM table_name ORDER BY column_you_want_to_ord
 SELECT UnitPrice, Quantity, Discount, UnitPrice*Quantity AS 'Gross Total'
 FROM [Order Details] ORDER BY 'Gross Total' DESC
 ```   
-* SELECT CASE - Can be useful when you need varying result outputs based on differing data. When building these case statements, put the most specific at the top. 
+* **SELECT CASE** - Can be useful when you need varying result outputs based on differing data. When building these case statements, put the most specific at the top. 
 ```sql
 SELECT <column_name>, CASE
 WHEN <condition1> THEN <output1>
@@ -84,7 +59,8 @@ END AS 'Employment Status'
 FROM Employees
 ```   
 ## String Functions
-* **IMPORTANT---> SQL INDEXING BEGINS AT 1.**
+**IMPORTANT---> SQL INDEXING BEGINS AT 1.**
+
 * SUBSTRING (text, start, length) i.e. Substring(hello,1,1)
 * CHARINDEX(arg1,arg2) - arg 1 is what you are looking for, and arg2 is where you are looking. 
 * LEFT(arg1,arg2) or RIGHT(arg1,arg2) – arg 1 is the string  and arg2 is the amount you want to move. 
@@ -119,13 +95,13 @@ WHERE CHARINDEX('''',ProductName)!=0
 ```
 
 ## Date functions
-* GETDATE() - returns the date.   
+* **GETDATE()** - returns the date.   
 ```sql 
 SELECT GETDATE()``` 
-* SYSDATETIME() - returns the date and time of the computer being used.     
+* **SYSDATETIME()** - returns the date and time of the computer being used.     
 ```sql 
 SELECT SYSDATETIME()```   
-* DATEADD – Adds the specified amount of time to a column in the DATE format.
+* **DATEADD** – Adds the specified amount of time to a column in the DATE format.
   * d=Days, mm=Months, yyyy= Years   
 
 ```sql
@@ -134,28 +110,28 @@ DATEADD (<type>, <amount>, <column_name>);
 --Example – Adds 5 days onto the OrderDate and stores this in a new column titled Due Date. 
 DATEADD(d,5,OrderDate) AS 'Due Date’
 ```
-* DATEDIFF – Calculates the difference between dates.
+* **DATEDIFF** – Calculates the difference between dates.
 ```sql
 DATEDIFF(<type>, <column1>, <column2>);
 
 --Example – Calculates the difference between two dates and stores in a new column titled Ship Time. 
 DATEDIFF(d,OrderDate,ShippedDate) AS 'Ship Time'
 ```
-* YEAR – Extracts the year from a date
+* YEAR** – Extracts the year from a date
 ```sql
 SELECT YEAR(<column_name>);
 
 --Example – Extracts year from OrderDate.
 SELECT YEAR(OrderDate) AS 'Order Year'
 ```
-* MONTH – Extracts the month from a date
+* **MONTH** – Extracts the month from a date
 ```sql
 SELECT MONTH(<column_name>);
 
 --Example – Extracts month from OrderDate.
 SELECT MONTH(OrderDate) AS 'Order Month'
 ```
-* DAY – Extracts the day from a date
+* **DAY** – Extracts the day from a date
 ```sql
 SELECT DAY(<column_name>);
 
@@ -201,7 +177,7 @@ SELECT
 FROM Products;
 ```
 
-* GROUP BY – Groups according to a specified category
+* **GROUP BY** – Groups according to a specified category
 ```sql
 SELECT <grouping_column>, 
     SUM(<column>) AS <new_name>,
@@ -219,7 +195,7 @@ FROM Products
 GROUP BY SupplierID
 ```
 
-* HAVING- Used instead of WHERE when filtering on subgroups. Essentially when we try to call an alias using WHERE, it will throw an error as it has not yet been created. HAVING allows us to call this alias.
+* **HAVING**- Used instead of WHERE when filtering on subgroups. Essentially when we try to call an alias using WHERE, it will throw an error as it has not yet been created. HAVING allows us to call this alias.
 ```sql
 SELECT <grouping_column>, 
     SUM(<column>) AS <new_name>,
